@@ -34,51 +34,58 @@
       <p class="text-secondary">Preparando animaciones y visualización 3D</p>
     </div>
 
-    <nav class="navbar-pro d-flex justify-content-between align-items-center">
-      <div class="logo fs-4">👓 Visor 3D Anaglifo FBX</div>
-      <div class="d-none d-md-block text-secondary">
-        Three.js + Mixamo + Anaglifo
+    <nav class="navbar-pro">
+      <div class="navbar-content">
+        <div class="logo">👓 VISOR 3D ANAGLIFO</div>
+
+        <div class="navbar-subtitle">
+          Three.js • FBX • Visualización Estereoscópica
+        </div>
       </div>
     </nav>
 
     <section class="panel">
-      <span id="modeBadge" class="badge-mode"> Modo actual: NORMAL </span>
+      <div class="panel-header">VISUALIZADOR 3D</div>
 
-      <h3 class="fw-bold">Visualizador 3D</h3>
+      <div class="panel-body">
+        <span id="modeBadge" class="badge-mode"> Modo actual: NORMAL </span>
 
-      <p class="text-secondary mb-3">
-        Cambia animaciones y compara vista normal contra anaglifo rojo/cian.
-      </p>
+        <p class="panel-description">
+          Visualizador interactivo de modelos FBX con soporte para visualización
+          anaglifo rojo/cian y control mediante teclado.
+        </p>
 
-      <div class="d-grid gap-2 mb-3">
-        <button id="btnNormal" class="btn-pro">Vista Normal</button>
+        <div class="instructions">
+          <div class="instruction-item">
+            <span>🖱️</span>
+            <p>Arrastra para rotar el modelo</p>
+          </div>
 
-        <button id="btnAnaglyph" class="btn-ghost">Vista Anaglifo</button>
+          <div class="instruction-item">
+            <span>🔍</span>
+            <p>Usa la rueda para acercar o alejar</p>
+          </div>
+
+          <div class="instruction-item">
+            <span>👓</span>
+            <p>Activa modo anaglifo con lentes rojo/cian</p>
+          </div>
+
+          <div class="instruction-item">
+            <span>⌨️</span>
+            <p>Teclas 1 - 5 cambian animaciones</p>
+          </div>
+
+          <div class="instruction-item">
+            <span>🕶️</span>
+            <p>Q = vista normal • E = modo anaglifo</p>
+          </div>
+        </div>
       </div>
-
-      <hr class="border-secondary" />
-
-      <h6 class="fw-bold mb-2">Animaciones</h6>
-
-      <div class="d-grid gap-2">
-        <button class="btn-pro animBtn" data-anim="idle">Idle</button>
-        <button class="btn-ghost animBtn" data-anim="run">Run</button>
-        <button class="btn-ghost animBtn" data-anim="kick">Flip Kick</button>
-        <button class="btn-ghost animBtn" data-anim="takedown">Takedown</button>
-        <button class="btn-ghost animBtn" data-anim="assassination">
-          Assassination
-        </button>
-      </div>
-
-      <hr class="border-secondary" />
-
-      <p class="mb-1">🖱️ Arrastra para girar</p>
-      <p class="mb-1">🔍 Rueda para acercar</p>
-      <p class="mb-0">👓 Usa lentes rojo/cian en modo anaglifo</p>
     </section>
 
     <footer class="footer-pro">
-      Programador: <b>Verde Espitia Jennifer Paola</b> | Carrera: <b>ITICS</b>
+      Álvaro Madrid Morales • Instituto Tecnológico de Pachuca
     </footer>
 
     <script type="module" src="./js/main.js"></script>

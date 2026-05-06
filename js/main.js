@@ -16,10 +16,10 @@ const loader = new FBXLoader();
 
 const animations = {
   idle: "./assets/idle.fbx",
-  run: "./assets/run.fbx",
-  kick: "./assets/kick.fbx",
-  takedown: "./assets/takedown.fbx",
-  assassination: "./assets/assassination.fbx",
+  run: "./assets/Fast Run.fbx",
+  kick: "./assets/Roundhouse Kick.fbx",
+  takedown: "./assets/Double Leg Takedown - Attacker.fbx",
+  jump: "./assets/Jump.fbx",
 };
 
 const scene = new THREE.Scene();
@@ -118,27 +118,73 @@ function loadAnimation(name) {
     },
   );
 }
+window.addEventListener("keydown", (event) => {
+  switch (event.key) {
+    case "1":
+      loadAnimation("idle");
 
-document.querySelectorAll(".animBtn").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    loadAnimation(btn.dataset.anim);
-  });
+      break;
+
+    case "2":
+      loadAnimation("run");
+
+      break;
+
+    case "3":
+      loadAnimation("kick");
+
+      break;
+
+    case "4":
+      loadAnimation("takedown");
+
+      break;
+
+    case "5":
+      loadAnimation("jump");
+
+      break;
+
+    case "q":
+      useAnaglyph = false;
+
+      document.getElementById("modeBadge").textContent = "Modo actual: NORMAL";
+
+      break;
+
+    case "e":
+      useAnaglyph = true;
+
+      document.getElementById("modeBadge").textContent =
+        "Modo actual: ANAGLIFO";
+
+      break;
+  }
 });
-
-document.getElementById("btnNormal").addEventListener("click", () => {
-  useAnaglyph = false;
-
-  document.getElementById("modeBadge").textContent = "Modo actual: NORMAL";
-});
-
-document.getElementById("btnAnaglyph").addEventListener("click", () => {
-  useAnaglyph = true;
-
-  document.getElementById("modeBadge").textContent = "Modo actual: ANAGLIFO";
-});
-
 loadAnimation("idle");
+window.addEventListener("keydown", (event) => {
+  switch (event.key) {
+    case "1":
+      loadAnimation("idle");
+      break;
 
+    case "2":
+      loadAnimation("run");
+      break;
+
+    case "3":
+      loadAnimation("kick");
+      break;
+
+    case "4":
+      loadAnimation("takedown");
+      break;
+
+    case "5":
+      loadAnimation("jump");
+      break;
+  }
+});
 function animate() {
   requestAnimationFrame(animate);
 
