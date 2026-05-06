@@ -5,208 +5,41 @@
 body{
     margin:0;
     overflow:hidden;
+
     background:
-    radial-gradient(circle at top left,#1e1e1e,#0f0f0f 45%,#050505 100%);
+    radial-gradient(
+        circle at top left,
+        #1e1e1e,
+        #0f0f0f 45%,
+        #050505 100%
+    );
+
     color:#f5f5f5;
+
     font-family:'Segoe UI',Arial,sans-serif;
 }
 
+/* =========================
+   THREE JS CONTAINER
+========================= */
+
+#scene-container{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:0;
+}
+
 canvas{
+
+    width:100% !important;
+
+    height:100% !important;
+
     display:block;
 }
-
-.navbar-pro{
-    position:absolute;
-    top:18px;
-    left:50%;
-    transform:translateX(-50%);
-    width:92%;
-    z-index:20;
-
-    background:rgba(20,20,20,.72);
-
-    backdrop-filter:blur(14px);
-
-    border:1px solid rgba(255,255,255,.08);
-
-    border-radius:20px;
-
-    padding:12px 18px;
-
-    box-shadow:0 10px 30px rgba(0,0,0,.35);
-}
-
-.logo{
-    font-weight:900;
-    letter-spacing:1px;
-    color:#f59e0b;
-}
-
-.panel{
-    position:absolute;
-    left:24px;
-    top:105px;
-    width:320px;
-    z-index:20;
-
-    background:rgba(18,18,18,.72);
-
-    border:1px solid rgba(255,255,255,.06);
-
-    border-radius:22px;
-
-    padding:18px;
-
-    backdrop-filter:blur(16px);
-
-    box-shadow:0 10px 40px rgba(0,0,0,.45);
-}
-
-.badge-mode{
-    display:inline-block;
-
-    padding:7px 14px;
-
-    border-radius:999px;
-
-    background:rgba(245,158,11,.12);
-
-    color:#fbbf24;
-
-    border:1px solid rgba(251,191,36,.18);
-
-    font-size:13px;
-
-    margin-bottom:10px;
-}
-
-.btn-pro{
-    border:none;
-
-    border-radius:14px;
-
-    padding:11px 14px;
-
-    font-weight:700;
-
-    color:white;
-
-    background:linear-gradient(
-        135deg,
-        #f59e0b,
-        #ea580c
-    );
-
-    transition:.25s;
-
-    box-shadow:0 5px 20px rgba(234,88,12,.28);
-}
-
-.btn-pro:hover{
-    transform:translateY(-2px) scale(1.02);
-}
-
-.btn-ghost{
-    border:1px solid rgba(255,255,255,.08);
-
-    background:rgba(255,255,255,.04);
-
-    color:#e5e5e5;
-
-    border-radius:14px;
-
-    padding:11px 14px;
-
-    font-weight:600;
-
-    transition:.25s;
-}
-
-.btn-ghost:hover{
-    background:rgba(255,255,255,.15);
-}
-
-.footer-pro{
-    position:absolute;
-    bottom:16px;
-    left:50%;
-    transform:translateX(-50%);
-    z-index:20;
-    background:rgba(15,23,42,.75);
-    backdrop-filter:blur(14px);
-    border:1px solid rgba(148,163,184,.25);
-    border-radius:18px;
-    padding:10px 18px;
-    font-size:13px;
-    color:#cbd5e1;
-}
-
-.loader{
-    position:absolute;
-    inset:0;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    flex-direction:column;
-    z-index:50;
-    background:radial-gradient(circle,#0f172a,#020617 70%);
-}
-
-.spinner{
-    width:70px;
-    height:70px;
-    border-radius:50%;
-    border:6px solid rgba(255,255,255,.15);
-    border-top-color:#38bdf8;
-    animation:spin 1s linear infinite;
-    margin-bottom:18px;
-}
-
-@keyframes spin{
-    to{
-        transform:rotate(360deg);
-    }
-}
-
-.glow{
-    position:absolute;
-    width:500px;
-    height:500px;
-    border-radius:50%;
-    pointer-events:none;
-    z-index:1;
-    filter:blur(60px);
-    opacity:.18;
-}
-
-.glow.one{
-    top:-120px;
-    left:-120px;
-    background:#f59e0b;
-}
-
-.glow.two{
-    right:-120px;
-    bottom:-120px;
-    background:#ea580c;
-}
-
-@media(max-width:768px){
-
-    .panel{
-        width:90%;
-        left:50%;
-        transform:translateX(-50%);
-        top:100px;
-    }
-
-    .footer-pro{
-        width:90%;
-        text-align:center;
-    }
-
-}
-
 
 /* =========================
    NAVBAR
@@ -271,7 +104,7 @@ canvas{
 }
 
 /* =========================
-   PANEL
+   PANEL LATERAL
 ========================= */
 
 .panel{
@@ -335,6 +168,29 @@ canvas{
 }
 
 /* =========================
+   BADGE
+========================= */
+
+.badge-mode{
+
+    display:inline-block;
+
+    padding:7px 14px;
+
+    border-radius:999px;
+
+    background:rgba(245,158,11,.12);
+
+    color:#fbbf24;
+
+    border:1px solid rgba(251,191,36,.18);
+
+    font-size:13px;
+
+    margin-bottom:10px;
+}
+
+/* =========================
    INSTRUCCIONES
 ========================= */
 
@@ -362,6 +218,15 @@ canvas{
     background:rgba(255,255,255,.03);
 
     border:1px solid rgba(255,255,255,.04);
+
+    transition:.25s;
+}
+
+.instruction-item:hover{
+
+    background:rgba(255,255,255,.05);
+
+    transform:translateY(-2px);
 }
 
 .instruction-item span{
@@ -376,6 +241,8 @@ canvas{
     color:#e5e7eb;
 
     font-size:14px;
+
+    line-height:1.5;
 }
 
 /* =========================
@@ -416,19 +283,104 @@ canvas{
 }
 
 /* =========================
+   LOADER
+========================= */
+
+.loader{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    flex-direction:column;
+
+    z-index:50;
+
+    background:
+    radial-gradient(
+        circle,
+        #1a1a1a,
+        #050505 75%
+    );
+}
+
+.spinner{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    border:6px solid rgba(255,255,255,.12);
+
+    border-top-color:#f59e0b;
+
+    animation:spin 1s linear infinite;
+
+    margin-bottom:18px;
+}
+
+@keyframes spin{
+
+    to{
+
+        transform:rotate(360deg);
+    }
+}
+
+/* =========================
+   GLOW EFFECTS
+========================= */
+
+.glow{
+
+    position:absolute;
+
+    width:500px;
+
+    height:500px;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    z-index:1;
+
+    filter:blur(60px);
+
+    opacity:.18;
+}
+
+.glow.one{
+
+    top:-120px;
+
+    left:-120px;
+
+    background:#f59e0b;
+}
+
+.glow.two{
+
+    right:-120px;
+
+    bottom:-120px;
+
+    background:#ea580c;
+}
+
+/* =========================
    RESPONSIVE
 ========================= */
 
 @media(max-width:768px){
-
-    .panel{
-
-        width:90%;
-
-        left:50%;
-
-        transform:translateX(-50%);
-    }
 
     .navbar-content{
 
@@ -442,11 +394,21 @@ canvas{
         font-size:12px;
     }
 
+    .panel{
+
+        width:90%;
+
+        left:50%;
+
+        transform:translateX(-50%);
+    }
+
     .footer-pro{
 
         text-align:center;
 
         padding:0 10px;
-    }
 
+        font-size:12px;
+    }
 }
