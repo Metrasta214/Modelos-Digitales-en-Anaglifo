@@ -27,13 +27,13 @@ const loader = new FBXLoader();
 const animations = {
   idle: "./assets/idle.fbx",
 
-  run: "./assets/Fast Run.fbx",
+  run: "./assets/fast_run.fbx",
 
-  kick: "./assets/Roundhouse Kick.fbx",
+  kick: "./assets/roundhouse_kick.fbx",
 
-  takedown: "./assets/Double Leg Takedown - Attacker.fbx",
+  takedown: "./assets/takedown.fbx",
 
-  jump: "./assets/Jump.fbx",
+  jump: "./assets/jump.fbx",
 };
 
 /* =========================
